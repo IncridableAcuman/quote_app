@@ -4,7 +4,7 @@ const App = () => {
   const [quote,setQuote]=useState(null);
   const handleSubmit=async ()=>{
     try {
-      const {data}=await axios.get("/api/quote");
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL || ""}/api/quote`);;
       setQuote(data);
     } catch (error) {
       console.log(error);
